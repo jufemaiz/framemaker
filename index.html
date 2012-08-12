@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>Frame Maker</title>
+		<meta content="authenticity_token" name="csrf-param" />
+		<meta content="rBjR5uy4ZtAZmWSgE7U9/wM0vLTTetR2f9Q+0x0wgj8=" name="csrf-token" />
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<!-- Le styles -->
+		<style>
+		  /*<![CDATA[*/
+		    body {padding-top: 80px;}
+			div.form { float: left; width: 200px; }
+			div.canvas { position: relative; float: left; margin-left: 50px; }
+			#frame { position: absolute; }
+			#frame div { position: absolute; }
+			#frame .frame { background: brown; width: 600px; height: 600px; }
+			#frame .frame .matt { background: white; width: 400px; height: 400px; }
+			#frame .frame .matt .picture { background: blue; width: 200px; height: 200px; }
+		  /*]]>*/
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" charset="utf-8">
+			function updateFrame() {
+				var MAXHEIGHT		= 600;
+				var MAXWIDTH		= 600;
+				var width_ratio		= 1;
+				var height_ratio	= 1;
+				var leFrame			= $("#frame");
+				var frame_width 	= $(".form input#frame_wood_width").attr('value')*1;
+				var matt_width		= $(".form input#frame_matt_width").attr('value')*1;
+				var picture_height	= $(".form input#picture_height").attr('value')*1;
+				var picture_width	= $(".form input#picture_width").attr('value')*1;
+			
+				frame_wood_length 	= 2 * ( picture_height + picture_width ) + 4 * ( frame_width + matt_width );
+				$('#frame_wood_length').attr('value',frame_wood_length);
+				
+				full_frame_width	= picture_width + 2  * ( frame_width + matt_width );
+				full_frame_height	= picture_height + 2  * ( frame_width + matt_width );
+				
+				if(full_frame_width > full_frame_height) { height_ratio	= full_frame_height / full_frame_width; } else { width_ratio		= full_frame_width / full_frame_height; }
+				
+				$('.picture',	leFrame).css({ 'height' : (MAXHEIGHT / full_frame_height) * (picture_height * height_ratio), 'width' : (MAXWIDTH / full_frame_width) * (picture_width * width_ratio) });
+				$('.matt',		leFrame).css({ 'height' : (MAXHEIGHT / full_frame_height) * ((picture_height + 2 * matt_width) * height_ratio), 'width' : (MAXWIDTH / full_frame_width) * ((picture_width + 2 * matt_width) * width_ratio) });
+				$('.frame',		leFrame).css({ 'height' : (MAXHEIGHT / full_frame_height) * ((picture_height + 2 * (matt_width + frame_width)) * height_ratio), 'width' : (MAXWIDTH / full_frame_width) * ((picture_width + 2 * (matt_width + frame_width)) * width_ratio) });
+
+				$('.matt',		leFrame).css({ 'top' : (MAXHEIGHT / full_frame_height) * (frame_width * height_ratio), 'left' : (MAXWIDTH / full_frame_width) * (frame_width * width_ratio) });
+				$('.picture',	leFrame).css({ 'top' : (MAXHEIGHT / full_frame_height) * ( matt_width * height_ratio), 'left' : (MAXWIDTH / full_frame_width) * ( matt_width * width_ratio) });
+			}
+		
+			$(document).ready(function(){
+				$('.form input').change(function() {
+				  updateFrame();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="form">
+			<form action="./" method="get" accept-charset="utf-8">
+				<fieldset>
+					<legend>Size Details (all in mm)</legend>
+					<div class="control-group">
+						<label class="control-label" for="frame_wood_width">Frame Wood Width</label>
+						<div class="control">
+							<input type="text" name="frame_wood_width" id="frame_wood_width" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="frame_matt_width">Matt Width</label>
+						<div class="control">
+							<input type="text" name="frame_matt_width" id="frame_matt_width" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="picture_height">Picture Height</label>
+						<div class="control">
+							<input type="text" name="picture_height" id="picture_height" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="picture_width">Picture Width</label>
+						<div class="control">
+							<input type="text" name="picture_width" id="picture_width" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="frame_wood_length">Frame Wood Length Required</label>
+						<div class="control">
+							<input type="text" name="frame_wood_length" id="frame_wood_length" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="canvas">
+			<div id="frame">
+				<div class="frame">
+					<div class="matt">
+						<div class="picture">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
