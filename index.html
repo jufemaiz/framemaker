@@ -35,14 +35,13 @@
 				var picture_height	= $(".form input#picture_height").attr('value')*1;
 				var picture_width	= $(".form input#picture_width").attr('value')*1;
 			
-				frame_wood_length 	= 2 * ( picture_height + picture_width ) + 4 * ( frame_width + matt_width );
-				$('#frame_wood_length').attr('value',frame_wood_length);
-				
 				full_frame_width	= picture_width + 2  * ( frame_width + matt_width );
 				full_frame_height	= picture_height + 2  * ( frame_width + matt_width );
+				frame_wood_length 	= 2 * ( full_frame_height + full_frame_width );
 				
 				$('#top_bottom_length').attr('value',full_frame_width);
 				$('#side_length').attr('value',full_frame_height);
+				$('#frame_wood_length').attr('value',frame_wood_length);
 				
 				if(full_frame_width > full_frame_height) { height_ratio	= full_frame_height / full_frame_width; } else { width_ratio		= full_frame_width / full_frame_height; }
 				
