@@ -1,0 +1,97 @@
+body
+	font-family: "freight-sans-pro", Helvetica, Arial, sans-serif
+	margin: 0
+	padding: 0
+	background: #f9f9f9
+	position: relative
+	height: 200%
+	
+	a
+		&:link, &:visited
+			color: #f90
+			text-decoration: none
+		&:hover, &:active, &:focus
+			
+
+	header
+		position: fixed
+		width: 200px
+		padding: 20px
+		min-height: 100%
+		border-right: 2px solid #eee
+		padding-right: 20px
+		h1
+			margin: 0 0 0 40px
+			font-size: 1.4em
+			line-height: 1em
+			a	
+				&:link, &:visited
+					color: #000
+				&:hover, &:active, &:focus
+			small
+				display: block
+				font-size: 75%
+				a	
+					&:link, &:visited
+						color: #666
+					&:hover, &:active, &:focus
+	#main
+		margin-left: 240px
+		padding: 20px
+		min-height: 100%
+		#canvas
+			min-height: 100%
+			position: relative
+			.frame
+				position: absolute
+				.matt0
+					position: absolute
+					height: 100%
+					width: 100%
+					#feede0
+						position: absolute
+						height: 100%
+						width: 100%
+					.inner
+						position: absolute
+						height: 100%
+						width: 100%
+						.picture
+							position: absolute
+							background: blue
+							height: 100%
+							width: 100%
+							img
+								display: none
+								height: 100%
+								width: 100%
+				
+		#controls
+			position: absolute
+			z-index: 101
+			left: 20px
+			top: 260px
+			width: 160px
+			padding: 20px
+			background: #fff
+			opacity: 0.9
+			
+			form
+				fieldset
+					border: none
+					margin: 0
+					legend
+						font-weight: bold
+					label
+						display: block
+			
+	footer
+		position: fixed
+		bottom: 20px
+		left: 20px
+		width: 200px
+		padding-right: 20px
+		p
+			margin: 0
+	
+		
