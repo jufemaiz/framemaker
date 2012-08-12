@@ -41,6 +41,9 @@
 				full_frame_width	= picture_width + 2  * ( frame_width + matt_width );
 				full_frame_height	= picture_height + 2  * ( frame_width + matt_width );
 				
+				$('#top_bottom_length').attr('value',full_frame_width);
+				$('#side_length').attr('value',full_frame_height);
+				
 				if(full_frame_width > full_frame_height) { height_ratio	= full_frame_height / full_frame_width; } else { width_ratio		= full_frame_width / full_frame_height; }
 				
 				$('.picture',	leFrame).css({ 'height' : (MAXHEIGHT / full_frame_height) * (picture_height * height_ratio), 'width' : (MAXWIDTH / full_frame_width) * (picture_width * width_ratio) });
@@ -91,6 +94,18 @@
 						<label class="control-label" for="frame_wood_length">Frame Wood Length Required</label>
 						<div class="control">
 							<input type="text" name="frame_wood_length" id="frame_wood_length" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="top_bottom_length">Top / Bottom lengths</label>
+						<div class="control">
+							<input type="text" name="top_bottom_length" id="top_bottom_length" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="side_length">Side piece lengths</label>
+						<div class="control">
+							<input type="text" name="side_length" id="side_length" />
 						</div>
 					</div>
 				</fieldset>
