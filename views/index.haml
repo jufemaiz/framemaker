@@ -1,39 +1,39 @@
 #controls
-	%form
-		%fieldset
-			%legend Build your frame
-			.control-group
-				%label.control-label{ :for => "imageWidth" } image width
-				%label.controls
-					%input{ :type => "text", :id => "imageWidth", :value => "100" }
-			.control-group
-				%label.control-label{ :for => "imageHeight" } image height
-				%label.controls
-					%input{ :type => "text", :id => "imageHeight", :value => "100" }
-			.control-group
-				%label.control-label{ :for => "imageWidth" } image source
-				%label.controls
-					%input{ :type => "text", :id => "imageSource", :value => "" }
-					%p optional
-			.control-group
-				%label.control-label{ :for => "matt0Width" } matt[0] width
-				%label.controls
-					%input{ :type => "text", :id => "matt0Width", :value => "0" }
-			.control-group
-				%label.control-label{ :for => "matt0Colour" } matt[0] colour
-				%label.controls
-					%input{ :type => "text", :id => "matt0Colour", :value => "#feede0" }
-			.control-group
-				%label.control-label{ :for => "frameWidth" } frame width
-				%label.controls
-					%input{ :type => "text", :id => "frameWidth", :value => "0" }
-			.control-group
-				%label.control-label{ :for => "frameColour" } frame colour
-				%label.controls
-					%input{ :type => "text", :id => "frameColour", :value => "#533014" }
-			
+  %form
+    %fieldset
+      %legend Build your frame
+      .control-group
+        %label.control-label{ for: 'imageWidth' } image width
+        %label.controls
+          %input{ type: 'text', id: 'imageWidth', value: '1000' }
+      .control-group
+        %label.control-label{ for: 'imageHeight' } image height
+        %label.controls
+          %input{ type: 'text', id: 'imageHeight', value: '1000' }
+      .control-group
+        %label.control-label{ for: 'imageWidth' } image source
+        %label.controls
+          %input{ type: 'text', id: 'imageSource', value: 'https://placekitten.com/g/1024/1024' }
+          %p optional
+      .control-group
+        %label.control-label{ for: 'matt0Width' } matt[0] width
+        %label.controls
+          %input{ type: 'text', id: 'matt0Width', value: '100' }
+      .control-group
+        %label.control-label{ for: 'matt0Colour' } matt[0] colour
+        %label.controls
+          %input{ type: 'text', id: 'matt0Colour', value: '#feede0' }
+      .control-group
+        %label.control-label{ for: 'frameWidth' } frame width
+        %label.controls
+          %input{ type: 'text', id: 'frameWidth', value: '50' }
+      .control-group
+        %label.control-label{ for: 'frameColour' } frame colour
+        %label.controls
+          %input{ type: 'text', id: 'frameColour', value: '#533014' }
+
 #canvas
-	.frame
-		.matt0
-			.inner
-				.picture
+  .frame
+    .matt0
+      .inner
+        .picture

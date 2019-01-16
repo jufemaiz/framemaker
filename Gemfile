@@ -1,11 +1,19 @@
+# frozen_string_literal: true
+
 # Ruby Version
-ruby '2.5.1'
+ruby '2.6.0'
+
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 source 'https://rubygems.org' do
-  # gem 'rubygems'
+  gem 'coffee-script'
+  gem 'haml'
+  gem 'sassc'
   gem 'sinatra'
   gem 'sinatra-static-assets'
-  gem 'haml'
-  gem 'sass'
-  gem 'coffee-script'
+
+  group :development do
+    gem 'rerun'
+    gem 'rubocop'
+  end
 end

@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -10,18 +11,39 @@ GEM
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
+    jaro_winkler (1.5.2)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     mustermann (1.0.2)
+    parallel (1.12.1)
+    parser (2.5.3.0)
+      ast (~> 2.4.0)
+    powerpack (0.1.2)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
+    rainbow (3.0.0)
+    rake (12.3.2)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    sass (3.5.7)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
+    rerun (0.13.0)
+      listen (~> 3.0)
+    rubocop (0.62.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.5, != 2.5.1.1)
+      powerpack (~> 0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.4.0)
+    ruby-progressbar (1.10.0)
+    ruby_dep (1.5.0)
+    sassc (2.0.0)
+      ffi (~> 1.9.6)
+      rake
     sinatra (2.0.3)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -31,6 +53,7 @@ GEM
       sinatra (>= 1.1.0)
     temple (0.8.0)
     tilt (2.0.8)
+    unicode-display_width (1.4.1)
 
 PLATFORMS
   ruby
@@ -38,12 +61,14 @@ PLATFORMS
 DEPENDENCIES
   coffee-script!
   haml!
-  sass!
+  rerun!
+  rubocop!
+  sassc!
   sinatra!
   sinatra-static-assets!
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.6.0p0
 
 BUNDLED WITH
-   1.16.1
+   1.17.3

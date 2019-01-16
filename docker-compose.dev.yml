@@ -1,0 +1,13 @@
+---
+version: '3.4'
+services:
+  web:
+    build: .
+    command: rerun --background "bundle exec rackup -p 3000 -o '0.0.0.0'"
+    entrypoint: bundle exec
+    environment:
+      RACK_ENV: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
