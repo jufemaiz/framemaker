@@ -14,6 +14,7 @@ source 'https://rubygems.org' do
   gem 'sinatra-static-assets'
 
   group :development do
+    gem 'haml_lint', require: false
     gem 'rerun'
     gem 'rubocop'
   end
