@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Ruby Version
-ruby '2.6.0'
+ruby '2.6.1'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -14,6 +14,7 @@ source 'https://rubygems.org' do
   gem 'sinatra-static-assets'
 
   group :development do
+    gem 'haml_lint', require: false
     gem 'rerun'
     gem 'rubocop'
   end

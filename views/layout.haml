@@ -33,14 +33,14 @@
     %script{ type: 'text/javascript' }
       try{ Typekit.load(); }catch(e){ }
 
-  %body{ class: '#{ params[:controller] } #{ params[:action] } tk-ff-nuvo-web-pro' }
+  %body.tk-ff-nuvo-web-pro{ class: [params[:controller], params[:action]].join(' ') }
     %header
       %a{ href: '/' }
         %img{ src: '/images/framemaker-logo-200px.png' }
       %h1
         %a{ href: '/' } Framemaker
 
-    #main{ role: 'main' }
+    .content#main{ role: 'main' }
       = yield
 
     %footer

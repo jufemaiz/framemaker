@@ -1,76 +1,94 @@
+$black: #000;
+$blue: #06f;
+$dark-grey: #333;
+$grey: #666;
+$light-grey: #ccc;
+$white: #fff;
+$off-white: #f9f9f9;
+$light-grey: #eee;
+$orange: #f90;
+
 body {
-  font-family: "freight-sans-pro", Helvetica, Arial, sans-serif;
+  background: $off-white;
+  font-family: 'freight-sans-pro', Helvetica, Arial, sans-serif;
+  height: 200%;
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
   position: relative;
-  height: 200%;
 
   a {
-    &:link, &:visited {
-      color: #f90;
+    &:link,
+    &:visited {
+      color: $orange;
       text-decoration: none;
     }
-    &:hover, &:active, &:focus {}
+    // &:hover,
+    // &:active,
+    // &:focus {}
   }
 
   header {
+    border-right: 2px solid $light-grey;
+    min-height: 100%;
+    padding: 20px;
+    padding-right: 20px;
     position: fixed;
     width: 200px;
-    padding: 20px;
-    min-height: 100%;
-    border-right: 2px solid #eee;
-    padding-right: 20px;
+
     h1 {
-      margin: 0 0 0 40px;
       font-size: 1.4em;
       line-height: 1em;
+      margin: 0 0 0 40px;
+
       a {
-        &:link, &:visited {
-          color: #000;
+        &:link,
+        &:visited {
+          color: $black;
         }
-        &:hover, &:active, &:focus {}
       }
+
       small {
         display: block;
         font-size: 75%;
+
         a {
-          &:link, &:visited {
-            color: #666;
+          &:link,
+          &:visited {
+            color: $grey;
           }
-          &:hover, &:active, &:focus {}
         }
       }
     }
   }
 
-  #main {
+  .content {
     margin-left: 240px;
-    padding: 20px;
     min-height: 100%;
-    #canvas {
+    padding: 20px;
+
+    .canvas {
       min-height: 100%;
       position: relative;
+
       .frame {
         position: absolute;
+
         .matt0 {
-          position: absolute;
           height: 100%;
+          position: absolute;
           width: 100%;
-          #feede0 {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-          }
+
           .inner {
-            position: absolute;
             height: 100%;
+            position: absolute;
             width: 100%;
+
             .picture {
-              position: absolute;
-              background: blue;
+              background: $blue;
               height: 100%;
+              position: absolute;
               width: 100%;
+
               img {
                 display: none;
                 height: 100%;
@@ -81,23 +99,26 @@ body {
         }
       }
     }
-    #controls {
-      position: absolute;
-      z-index: 101;
+
+    .controls {
+      background: $white;
       left: 20px;
+      opacity: .9;
+      padding: 20px;
+      position: absolute;
       top: 260px;
       width: 160px;
-      padding: 20px;
-      background: #fff;
-      opacity: 0.9;
+      z-index: 101;
 
       form {
         fieldset {
-          border: none;
+          border: 0;
           margin: 0;
+
           legend {
             font-weight: bold;
           }
+
           label {
             display: block;
           }
@@ -107,11 +128,12 @@ body {
   }
 
   footer {
-    position: fixed;
     bottom: 20px;
     left: 20px;
-    width: 200px;
     padding-right: 20px;
+    position: fixed;
+    width: 200px;
+
     p {
       margin: 0;
     }
